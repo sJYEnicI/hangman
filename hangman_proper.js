@@ -54,7 +54,7 @@ function addLetter(guess, word, answerArray){
 } //corrects the answer array to display the guessed letter
 
 function showPlayerProgress(answerArray, attemptsLeft) {
-    if(gameOver === false && lettersLeft > 0 && attemptsLeft > 0) {
+    if(!gameOver && lettersLeft > 0 && attemptsLeft > 0) {
         alert(`Current progress: \n${answerArray.join(" ")} \nYou have ${attemptsLeft} guesses left.`);
     }
 } //shows user the progress
@@ -70,7 +70,7 @@ function showAndCongradulatePlayer(word){
 } //displays the final msgs
 
 
-let chosenWord = pickWord();
+const chosenWord = pickWord();
 let answerArray = setupAnswerArray(chosenWord); //the main array that we display to the user
 let guessedArray = []; //array of letters that user has already guessed
 let lettersLeft = chosenWord.length;  
